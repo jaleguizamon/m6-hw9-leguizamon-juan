@@ -8,6 +8,7 @@ var button = document.querySelector('button');
 var inputElement = document.getElementById('city');
 var returnObj = document.querySelector('.returnObject');
 var city = document.querySelector('.city');
+var locLink = document.querySelector('.locLink');
 var icon = document.querySelector('.icon');
 var description = document.querySelector('.description');
 var currentTemp = document.querySelector('.current');
@@ -53,6 +54,7 @@ function pullLatLong(locationObj) {
 function displayWeather(weatherObj) {
     returnObj.style.background = 'rgba(186, 161, 161, 0.25)';
     city.textContent = weatherObj.name + ', ' + weatherObj.sys.country;
+    locLink.innerHTML = '<a href="https://google.com/maps/place/'+weatherObj.name+',+'+weatherObj.sys.country+'" target="_blank">Click to view map</a>';
     icon.innerHTML = '<img src="https://openweathermap.org/img/wn/'+weatherObj.weather[0].icon+'@2x.png"></img>';
     description.textContent = weatherObj.weather[0].description;
     currentTemp.textContent = 'Current: ' + weatherObj.main.temp + ' \xB0F';
@@ -62,6 +64,7 @@ function displayWeather(weatherObj) {
 function clearHTML() {
     returnObj.style.background = '';
     city.textContent = '';
+    locLink.innerHTML = '';
     icon.innerHTML = '';
     description.innerHTML = '';
     currentTemp.textContent = '';
