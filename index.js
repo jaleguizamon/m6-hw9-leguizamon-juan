@@ -24,7 +24,7 @@ button.onclick = function() {
 
     var inputQuery = inputElement.value.trim();
     var noSpaceQuery = inputQuery.split(' ').join('');
-    fetch('http://api.openweathermap.org/geo/1.0/direct?q='+noSpaceQuery+',US&limit=3&appid='+key) // make the request
+    fetch('https://api.openweathermap.org/geo/1.0/direct?q='+noSpaceQuery+',US&limit=3&appid='+key) // make the request
     .then(function(res) {
         return res.json();
     })
@@ -53,7 +53,7 @@ function pullLatLong(locationObj) {
 function displayWeather(weatherObj) {
     returnObj.style.background = 'rgba(186, 161, 161, 0.25)';
     city.textContent = weatherObj.name + ', ' + weatherObj.sys.country;
-    icon.innerHTML = '<img src="http://openweathermap.org/img/wn/'+weatherObj.weather[0].icon+'@2x.png"></img>';
+    icon.innerHTML = '<img src="https://openweathermap.org/img/wn/'+weatherObj.weather[0].icon+'@2x.png"></img>';
     description.textContent = weatherObj.weather[0].description;
     currentTemp.textContent = 'Current: ' + weatherObj.main.temp + ' \xB0F';
     feelsLikeTemp.textContent = 'Feels Like: ' + weatherObj.main.feels_like + ' \xB0F';
