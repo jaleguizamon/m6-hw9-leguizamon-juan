@@ -1,0 +1,35 @@
+html {
+    height: 100%;
+    background: #0E1762;
+    background: radial-gradient(circle, #0E1762 0%, #D29956 77%);
+    font-family: 'Lato', sans-serif;
+    color: cornsilk;
+}
+
+body, .inputArea, .returnObject {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label, input, button {
+    margin: 2% 0;
+}
+
+input, button {
+    width: 100%;
+}
+
+input {
+    color: #0E1762;
+    border: 0px;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+}
+
+button {
+    color: cornsilk;
+    background-color: #0E1762;
+    font-family: 'Lato', sans-serif;
+}
+
